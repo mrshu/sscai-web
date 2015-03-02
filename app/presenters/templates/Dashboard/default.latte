@@ -1,0 +1,20 @@
+{block content}
+
+<h1 n:block="title">Upcoming games</h1>
+
+
+<table class="grid">
+<tr>
+	<th>#ID</th>
+	<th>Bot1</th>
+	<th>Bot2</th>
+</tr>
+
+{foreach $games as $game}
+<tr>
+	<td>{$game->game_id}</td>
+	<td>{$game->ref('fos_user', 'bot1')->full_name}</td>
+	<td>{$game->ref('fos_user', 'bot1')->full_name}</td>
+</tr>
+{/foreach}
+</table>

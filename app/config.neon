@@ -19,3 +19,4 @@ services:
 	- App\Model\Authenticator
 	- App\Model\Games
 	- App\Model\Users
+	- App\Model\Posts

@@ -12,10 +12,13 @@ class DashboardPresenter extends Nette\Application\UI\Presenter
 	/** @var Model\Games*/
 	private $games;
 
+        private $posts;
 
-	public function __construct(Model\Games $games)
+
+	public function __construct(Model\Games $games, Model\Posts $posts)
 	{
 		$this->games = $games;
+		$this->posts = $posts;
 	}
 
 
@@ -41,5 +44,7 @@ class DashboardPresenter extends Nette\Application\UI\Presenter
                         ->where('result', 'unfinished')
                         ->order('game_id ASC')
                         ->limit(4);
+
+                $this->template->posts = $this->posts->findAll();
 	}
 }

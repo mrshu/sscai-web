@@ -18,3 +18,11 @@
 </tr>
 {/foreach}
 </table>
+
+<h2>Posts</h2>
+
+<ol>
+{foreach $posts as $post}
+        <li><a n:href="Posts:list $post">{ucfirst($post)}</a></li>
+{/foreach}
+</ol>
